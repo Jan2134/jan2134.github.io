@@ -1,0 +1,253 @@
+/* ─── Reset / Base ─────────────────────────────────────── */
+
+body {
+  background: #f7f7f5;
+  color: #1a1a1a;
+}
+
+.page-content {
+  padding-top: 0;
+}
+
+/* ─── Portfolio Wrapper ─────────────────────────────────── */
+
+.portfolio-wrapper {
+  max-width: 780px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ─── Intro Section ─────────────────────────────────────── */
+
+.portfolio-intro {
+  display: flex;
+  align-items: flex-start;
+  gap: 36px;
+  padding: 64px 0 72px;
+}
+
+.intro-photo img {
+  width: 120px;
+  height: 120px;
+  max-width: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  display: block;
+  background: #e2e8f0;
+}
+
+.intro-text {
+  flex: 1;
+  min-width: 0;
+}
+
+.intro-text h1 {
+  font-size: 1.9rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 4px;
+  letter-spacing: -0.03em;
+}
+
+.intro-tagline {
+  font-size: 0.95rem;
+  color: #64748b;
+  margin: 0 0 18px;
+  font-weight: 400;
+}
+
+.intro-bio {
+  font-size: 1rem;
+  line-height: 1.72;
+  color: #334155;
+  margin: 0 0 22px;
+}
+
+.social-links {
+  display: flex;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.social-links a {
+  display: inline-block;
+  padding: 7px 15px;
+  border: 1.5px solid #0f172a;
+  border-radius: 6px;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: #0f172a;
+  text-decoration: none;
+  letter-spacing: 0.01em;
+  transition: background 0.18s, color 0.18s;
+}
+
+.social-links a:hover {
+  background: #0f172a;
+  color: #fff;
+}
+
+/* ─── Projects Section ──────────────────────────────────── */
+
+.projects-section {
+  padding-bottom: 80px;
+}
+
+.projects-section > h2 {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  margin: 0 0 20px;
+}
+
+/* ─── Project Card ──────────────────────────────────────── */
+
+.project-card {
+  background: #fff;
+  border: 1px solid #e2e8f0;
+  border-radius: 14px;
+  padding: 24px 28px;
+  margin-bottom: 14px;
+  overflow: hidden;
+  transition: border-color 0.22s ease, box-shadow 0.22s ease;
+}
+
+.project-card:hover {
+  border-color: #0f172a;
+  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
+}
+
+.card-main {
+  display: flex;
+  align-items: flex-start;
+  gap: 20px;
+}
+
+.card-image {
+  flex-shrink: 0;
+  width: 64px;
+  height: 64px;
+  max-width: 64px;
+  border-radius: 50%;
+  object-fit: cover;
+  background: #f1f5f9;
+}
+
+.card-body {
+  flex: 1;
+  min-width: 0;
+}
+
+.card-meta {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  margin-bottom: 6px;
+}
+
+.year-badge {
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #94a3b8;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.category-tag {
+  font-size: 0.7rem;
+  font-weight: 600;
+  padding: 2px 9px;
+  background: #f1f5f9;
+  border-radius: 100px;
+  color: #475569;
+  letter-spacing: 0.02em;
+}
+
+.project-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #0f172a;
+  margin: 0 0 8px;
+  letter-spacing: -0.02em;
+}
+
+.project-summary {
+  font-size: 0.9rem;
+  line-height: 1.65;
+  color: #475569;
+  margin: 0;
+}
+
+/* ─── Expanded Content (revealed on hover) ──────────────── */
+
+.card-expanded {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  padding-left: 84px;
+  margin-top: 0;
+  transition:
+    max-height 0.42s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity 0.28s ease 0.06s,
+    margin-top 0.32s ease;
+}
+
+.project-card:hover .card-expanded {
+  max-height: 160px;
+  opacity: 1;
+  margin-top: 14px;
+}
+
+.card-expanded p {
+  font-size: 0.87rem;
+  line-height: 1.65;
+  color: #334155;
+  margin: 0 0 12px;
+}
+
+.project-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 0.82rem;
+  font-weight: 700;
+  color: #0f172a;
+  text-decoration: none;
+  border-bottom: 1.5px solid currentColor;
+  padding-bottom: 1px;
+  transition: opacity 0.18s;
+}
+
+.project-link:hover {
+  opacity: 0.55;
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .portfolio-intro {
+    flex-direction: column;
+    gap: 22px;
+    padding: 44px 0 56px;
+  }
+
+  .project-card {
+    padding: 20px 18px;
+  }
+
+  .card-image {
+    width: 52px;
+    height: 52px;
+    max-width: 52px;
+  }
+
+  .card-expanded {
+    padding-left: 72px;
+  }
+
+  .project-card:hover .card-expanded {
+    max-height: 200px;
+  }
+}
