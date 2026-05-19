@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: bare
 title: "AuraEat Nexus — Privacy Policy"
 permalink: /auraeat/privacy-policy/
 ---
