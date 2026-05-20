@@ -34,9 +34,14 @@ title: Jan Sternberg
     </div>
   </section>
 
+  <!-- ══ TABS ════════════════════════════════════════════════ -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('projects', this)">Projects</button>
+    <button class="tab-btn" onclick="switchTab('sports', this)">Sports</button>
+  </div>
+
   <!-- ══ PROJECTS ════════════════════════════════════════════ -->
-  <section class="projects-section">
-    <h2>Projects</h2>
+  <section class="projects-section" id="tab-projects">
 
     <!-- ── BetterNotes ─────────────────────────────────────── -->
     <div class="project-card">
@@ -151,4 +156,25 @@ title: Jan Sternberg
     </div>
 
   </section>
+
+  <!-- ══ SPORTS ══════════════════════════════════════════════ -->
+  <section class="sports-section" id="tab-sports" style="display:none">
+    <p class="sports-intro">I crossed the Alps twice on foot, hiked Illimani (6,100m), and ran three marathons and several half marathons.</p>
+    <div class="sports-photo-block">
+      <img src="/assets/images/illimani.jpeg" alt="Illimani hike with a lechuga">
+      <p class="sports-caption"><em>Our Illimani (La Paz) hike — you might ask why we brought a "lechuga" up there. We were helping a local logistics company with their supermarket operations, particularly with salads. One day in a bar after a long working day, we were discussing marketing strategies and landed on what felt like La Paz's greatest marketing stunt: bring a salad up the mountain that shapes the city. Two months later, there we were at 6,100m with the salad in our hands.</em></p>
+    </div>
+  </section>
+
 </div>
+
+<script>
+  function switchTab(name, btn) {
+    document.querySelectorAll('.tab-content-section').forEach(function(s) { s.style.display = 'none'; });
+    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
+    document.getElementById('tab-' + name).style.display = 'block';
+    btn.classList.add('active');
+  }
+  document.getElementById('tab-projects').classList.add('tab-content-section');
+  document.getElementById('tab-sports').classList.add('tab-content-section');
+</script>

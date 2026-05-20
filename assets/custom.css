@@ -251,3 +251,67 @@ body {
     max-height: 200px;
   }
 }
+
+/* ─── Tabs ──────────────────────────────────────────────── */
+
+.tab-bar {
+  display: flex;
+  gap: 4px;
+  margin-bottom: 24px;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  cursor: pointer;
+  font-size: 0.72rem;
+  font-weight: 700;
+  color: #cbd5e1;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  padding: 0 0 6px;
+  border-bottom: 2px solid transparent;
+  transition: color 0.18s, border-color 0.18s;
+  font-family: inherit;
+  margin-right: 18px;
+}
+
+.tab-btn:hover {
+  color: #64748b;
+}
+
+.tab-btn.active {
+  color: #94a3b8;
+  border-bottom-color: #94a3b8;
+}
+
+/* ─── Sports Section ────────────────────────────────────── */
+
+.sports-section {
+  padding-bottom: 80px;
+}
+
+.sports-intro {
+  font-size: 1.05rem;
+  line-height: 1.72;
+  color: #334155;
+  margin: 0 0 32px;
+}
+
+.sports-photo-block {
+  max-width: 560px;
+}
+
+.sports-photo-block img {
+  width: 100%;
+  border-radius: 12px;
+  display: block;
+  margin-bottom: 14px;
+}
+
+.sports-caption {
+  font-size: 0.85rem;
+  line-height: 1.68;
+  color: #64748b;
+  margin: 0;
+}
