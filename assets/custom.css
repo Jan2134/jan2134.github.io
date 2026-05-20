@@ -296,6 +296,11 @@ body {
   line-height: 1.72;
   color: #334155;
   margin: 0 0 32px;
+  padding-left: 20px;
+}
+
+.sports-intro li {
+  margin-bottom: 6px;
 }
 
 .sports-photo-block {
