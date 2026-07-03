@@ -201,6 +201,14 @@ body {
   color: var(--text);
 }
 
+.card-icon img {
+  width: 34px;
+  height: 34px;
+  object-fit: cover;
+  border-radius: var(--r);
+  display: block;
+}
+
 .card-num {
   font-family: var(--mono);
   font-size: 10px;
