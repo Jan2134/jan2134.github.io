@@ -3,163 +3,136 @@ layout: default
 title: Jan Sternberg
 ---
 
-<div class="portfolio-wrapper">
+<div class="pw">
 
-  <!-- ══ INTRO ══════════════════════════════════════════════ -->
-  <section class="portfolio-intro">
-    <div class="intro-photo">
-      <img
-        src="/assets/images/profile.JPG"
-        alt="Jan Sternberg"
-        onerror="this.closest('.intro-photo').style.display='none'"
-      >
-    </div>
-    <div class="intro-text">
-      <h1>Jan Sternberg</h1>
-      <p class="intro-tagline">Business &amp; Analytics · Digital Transformation · Builder</p>
-      <p class="intro-bio">
-        I'm Jan. At 18, I moved to Barcelona to study Business Administration at ESADE, and quickly discovered two things I couldn't stop pursuing.
-        <br><br>
-        The first is technology. I took every programming elective ESADE offered, attended an AI summer school at Oxford in 2023, completed a Data Analytics exchange at CBS Copenhagen, and finished with a Master's in Business Analytics at ESADE. Along the way I built up foundational skills in Python, SQL, and R, learned to navigate AWS, and spend a good portion of my free time building prototypes, apps and websites.
-        <br><br>
-        The second is helping people grow their businesses. It started with association work at university. I've been part of over four student organisations, three of which did pro-bono consulting for companies, mostly in tech. I took on board positions leading teams of 15+, co-organised a financial literacy course with an ESADE professor, consulted businesses in the townships of South Africa, and worked with two local companies in Bolivia. Add in an exchange in Vancouver and study tours in Seoul, and I've now built working and academic experience across five continents.
-        <br><br>
-        This page is for everything that doesn't fit on LinkedIn yet.
-      </p>
-      <div class="social-links">
-        <a href="https://linkedin.com/in/jan-sternberg" target="_blank" rel="noopener">LinkedIn</a>
-        <a href="https://github.com/jan2134" target="_blank" rel="noopener">GitHub</a>
-        <a href="mailto:janerik.sternberg@gmail.com">Email</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ══ TABS ════════════════════════════════════════════════ -->
-  <div class="tab-bar">
-    <button class="tab-btn active" onclick="switchTab('projects', this)">Projects</button>
-    <button class="tab-btn" onclick="switchTab('sports', this)">Sports</button>
+  <!-- ══ TERMINAL BAR ═════════════════════════════════════════ -->
+  <div class="term-bar">
+    <span>~/jan-sternberg</span>
+    <span>status: <span class="term-online">online</span><span class="term-cursor">_</span></span>
   </div>
 
-  <!-- ══ PROJECTS ════════════════════════════════════════════ -->
-  <section class="projects-section" id="tab-projects">
-
-    <!-- ── BetterNotes ─────────────────────────────────────── -->
-    <div class="project-card">
-      <div class="card-main">
-        <img class="card-image" src="/assets/images/better-notes.png" alt="BetterNotes" onerror="this.style.visibility='hidden'">
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="year-badge">2026</span>
-            <span class="category-tag">AI Platform</span>
-          </div>
-          <h3 class="project-title">BetterNotes</h3>
-          <p class="project-summary">An AI-powered platform three of us built for students, turning raw notes, lecture slides, and handwritten content into structured study materials, practice exams, and LaTeX-formatted documents. We're winding it down in 2026 as the founding team moves into different roles, but it taught us a lot about shipping fast.</p>
-        </div>
+  <!-- ══ PROFILE ══════════════════════════════════════════════ -->
+  <div class="profile">
+    <img class="profile-avatar" src="/assets/images/profile.JPG" alt="Jan Sternberg" onerror="this.style.display='none'">
+    <div class="profile-body">
+      <h1>Jan Sternberg</h1>
+      <p class="profile-tagline">business_analytics · digital_transformation · builder</p>
+      <div class="profile-bio">
+        <p>I'm Jan. At 18, I moved to Barcelona to study Business Administration at ESADE, and quickly discovered two things I couldn't stop pursuing.</p>
+        <p>The first is technology. I took every programming elective ESADE offered, attended an AI summer school at Oxford in 2023, completed a Data Analytics exchange at CBS Copenhagen, and finished with a Master's in Business Analytics at ESADE. Along the way I built up foundational skills in Python, SQL, and R, learned to navigate AWS, and spend a good portion of my free time building prototypes, apps and websites.</p>
+        <p>The second is helping people grow their businesses. It started with association work at university. I've been part of over four student organisations, three of which did pro-bono consulting for companies, mostly in tech. I took on board positions leading teams of 15+, co-organised a financial literacy course with an ESADE professor, consulted businesses in the townships of South Africa, and worked with two local companies in Bolivia. Add in an exchange in Vancouver and study tours in Seoul, and I've now built working and academic experience across five continents.</p>
+        <p>This page is for everything that doesn't fit on LinkedIn yet.</p>
       </div>
+      <div class="profile-links">
+        <a href="https://linkedin.com/in/jan-sternberg" target="_blank" rel="noopener" class="profile-link">linkedin ↗</a>
+        <a href="https://github.com/jan2134" target="_blank" rel="noopener" class="profile-link">github ↗</a>
+        <a href="mailto:janerik.sternberg@gmail.com" class="profile-link">email ↗</a>
+      </div>
+    </div>
+  </div>
+
+  <!-- ══ TABS ═════════════════════════════════════════════════ -->
+  <div class="tab-bar">
+    <button class="tab-btn active" onclick="switchTab('projects', this)">// projects</button>
+    <button class="tab-btn" onclick="switchTab('sports', this)">// sports</button>
+  </div>
+
+  <!-- ══ PROJECTS GRID ════════════════════════════════════════ -->
+  <section class="projects-grid tab-content-section" id="tab-projects">
+
+    <!-- BetterNotes -->
+    <div class="project-card">
+      <div class="card-top">
+        <div class="card-icon"><i class="ti ti-notebook" aria-hidden="true"></i></div>
+        <span class="card-num">01 / 06</span>
+      </div>
+      <p class="card-name">BetterNotes</p>
+      <p class="card-tags">[ai_platform] [sunset_2026]</p>
+      <p class="card-summary">An AI platform three of us built for students, turning raw notes and lecture slides into study materials, practice exams, and LaTeX documents. Winding down as the team moves on.</p>
       <div class="card-expanded">
-        <p>Students paste or upload any content and instantly receive organized summaries, flashcard-ready questions, and exam simulations. LaTeX output makes it especially useful for technical and scientific coursework. The product is being sunset in 2026.</p>
-        <a href="https://better-notes.ai" target="_blank" rel="noopener" class="project-link">Visit BetterNotes →</a>
+        <p>Students paste or upload any content and instantly receive organized summaries, flashcard-ready questions, and exam simulations. LaTeX output makes it especially useful for technical coursework. The product is being sunset in 2026.</p>
+        <a href="https://better-notes.ai" target="_blank" rel="noopener" class="card-link">better-notes.ai ↗</a>
       </div>
     </div>
 
-    <!-- ── The Seed Podcast ───────────────────────────────── -->
+    <!-- The Seed Podcast -->
     <div class="project-card">
-      <div class="card-main">
-        <img class="card-image" src="/assets/images/seed-podcast.png" alt="The Seed Podcast" onerror="this.style.visibility='hidden'">
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="year-badge">2026</span>
-            <span class="category-tag">Podcast</span>
-          </div>
-          <h3 class="project-title">The Seed Podcast</h3>
-          <p class="project-summary">A podcast about ventures I co-hosted for its second season, wrapping in June 2026. Conversations with founders and investors about fundraising, failure, and what it really takes to go from idea to something real.</p>
-        </div>
+      <div class="card-top">
+        <div class="card-icon"><i class="ti ti-microphone-2" aria-hidden="true"></i></div>
+        <span class="card-num">02 / 06</span>
       </div>
+      <p class="card-name">The Seed Podcast</p>
+      <p class="card-tags">[podcast] [season_2_wrapped]</p>
+      <p class="card-summary">A podcast about ventures I co-hosted for its second season, wrapping in June 2026. Conversations with founders and investors about fundraising, failure, and what it really takes to get from idea to something real.</p>
       <div class="card-expanded">
         <p>Season 2 ran through June 2026 with Hassan Baraka. Not the polished success story, but the real decisions, pivots, and hard-won lessons that shaped each venture.</p>
-        <a href="https://open.spotify.com/show/4M6emPxJVSQUNmapaMxLuB?si=08d94f6f5a044db9" target="_blank" rel="noopener" class="project-link">Listen on Spotify →</a>
+        <a href="https://open.spotify.com/show/4M6emPxJVSQUNmapaMxLuB?si=08d94f6f5a044db9" target="_blank" rel="noopener" class="card-link">spotify ↗</a>
       </div>
     </div>
 
-    <!-- ── AuraEat ──────────────────────────────────────────── -->
+    <!-- AuraEat -->
     <div class="project-card">
-      <div class="card-main">
-        <img class="card-image" src="/assets/images/auraeat.png" alt="AuraEat" onerror="this.style.visibility='hidden'">
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="year-badge">2026</span>
-            <span class="category-tag">App</span>
-          </div>
-          <h3 class="project-title">AuraEat</h3>
-          <p class="project-summary">A circadian nutrition concept a few of us built for Esade's Ideaup Start-Up Challenge, syncing your eating window to your biological clock using biometric data from Apple HealthKit and AI-powered food analysis. Currently prepping for an App Store release.</p>
-        </div>
+      <div class="card-top">
+        <div class="card-icon"><i class="ti ti-apple" aria-hidden="true"></i></div>
+        <span class="card-num">03 / 06</span>
       </div>
+      <p class="card-name">AuraEat</p>
+      <p class="card-tags">[ios_app] [app_store_soon]</p>
+      <p class="card-summary">A circadian nutrition concept built for Esade's Ideaup Start-Up Challenge, syncing your eating window to your biological clock via Apple HealthKit. Currently prepping for App Store release.</p>
       <div class="card-expanded">
         <p>Reads sleep, HRV, and resting heart rate to compute your Aura Score, a daily readiness metric that determines the optimal eating window. Built with friends as a challenge project, no company behind it yet, but the plan is to get it live on the App Store.</p>
       </div>
     </div>
 
-    <!-- ── Website Hosting ─────────────────────────────────── -->
+    <!-- Website Hosting -->
     <div class="project-card">
-      <div class="card-main">
-        <img class="card-image" src="/assets/images/website-hosting.png" alt="Website Hosting" onerror="this.style.visibility='hidden'">
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="year-badge">2026</span>
-            <span class="category-tag">Web</span>
-          </div>
-          <h3 class="project-title">Website Hosting</h3>
-          <p class="project-summary">Over seven years of hosting and building websites (mostly on WordPress) for clients ranging from businesses in Germany and Spain to a water company in South Africa, an NGO in Uganda, and a startup in Bolivia.</p>
-        </div>
+      <div class="card-top">
+        <div class="card-icon"><i class="ti ti-world" aria-hidden="true"></i></div>
+        <span class="card-num">04 / 06</span>
       </div>
+      <p class="card-name">Website Hosting</p>
+      <p class="card-tags">[web] [wordpress] [2026]</p>
+      <p class="card-summary">Over seven years hosting and building websites (mostly WordPress) for clients from Germany and Spain to a water company in South Africa, an NGO in Uganda, and a startup in Bolivia.</p>
       <div class="card-expanded">
-        <p>Each project brought its own constraints: different infrastructure, languages, connectivity, and expectations. Building for markets where reliability really matters has made me a much more thoughtful developer. What started as helping local businesses has quietly grown into a small portfolio spanning four continents.</p>
+        <p>Each project brought its own constraints: different infrastructure, languages, connectivity, and expectations. Building for markets where reliability really matters has made me a more thoughtful developer.</p>
       </div>
     </div>
 
-    <!-- ── @PacenosAlemanes ────────────────────────────────── -->
+    <!-- @PacenosAlemanes -->
     <div class="project-card">
-      <div class="card-main">
-        <img class="card-image" src="/assets/images/pacenosalemanes.jpg" alt="PacenosAlemanes" onerror="this.style.visibility='hidden'">
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="year-badge">2024</span>
-            <span class="category-tag">YouTube</span>
-          </div>
-          <h3 class="project-title">@PacenosAlemanes</h3>
-          <p class="project-summary">A Spanish-language YouTube channel documenting volunteer life, consulting work, and adventure in Bolivia: what we built, what surprised us, and what it's really like to work in one of South America's most remarkable countries.</p>
-        </div>
+      <div class="card-top">
+        <div class="card-icon"><i class="ti ti-brand-youtube" aria-hidden="true"></i></div>
+        <span class="card-num">05 / 06</span>
       </div>
+      <p class="card-name">@PacenosAlemanes</p>
+      <p class="card-tags">[youtube] [spanish] [bolivia]</p>
+      <p class="card-summary">A Spanish-language YouTube channel documenting volunteer life, consulting work, and adventure in Bolivia: what we built, what surprised us, and what it's really like to work there.</p>
       <div class="card-expanded">
-        <p>In 2024, I traveled to Bolivia as part of a consulting project and filmed the whole experience. The channel captures the concrete work we did with local businesses, the culture and landscapes that make Bolivia unlike anywhere else, and the challenges of navigating it all as an outsider. Everything in Spanish.</p>
-        <a href="https://youtube.com/@PacenosAlemanes" target="_blank" rel="noopener" class="project-link">Watch on YouTube →</a>
+        <p>In 2024, I traveled to Bolivia as part of a consulting project and filmed the whole experience. The channel captures the work with local businesses, the culture, and the challenges of navigating it all as an outsider.</p>
+        <a href="https://youtube.com/@PacenosAlemanes" target="_blank" rel="noopener" class="card-link">youtube ↗</a>
       </div>
     </div>
 
-    <!-- ── Zwei Jungs, ein Podcast ─────────────────────────── -->
+    <!-- Zwei Jungs, ein Podcast -->
     <div class="project-card">
-      <div class="card-main">
-        <img class="card-image" src="/assets/images/zwei-jungs.PNG" alt="Zwei Jungs, ein Podcast" onerror="this.style.visibility='hidden'">
-        <div class="card-body">
-          <div class="card-meta">
-            <span class="year-badge">2021</span>
-            <span class="category-tag">Podcast</span>
-          </div>
-          <h3 class="project-title">Zwei Jungs, ein Podcast</h3>
-          <p class="project-summary">My first real project, a German-language podcast born out of COVID-era curiosity. What started as casual conversations with friends about their side jobs quickly grew into something bigger: members of parliament, comedians, TV presenters, and more.</p>
-        </div>
+      <div class="card-top">
+        <div class="card-icon"><i class="ti ti-headphones" aria-hidden="true"></i></div>
+        <span class="card-num">06 / 06</span>
       </div>
+      <p class="card-name">Zwei Jungs, ein Podcast</p>
+      <p class="card-tags">[podcast] [german] [2021]</p>
+      <p class="card-summary">My first real project, a German-language podcast born out of COVID-era curiosity. What started as casual conversations about side jobs grew into interviews with parliament members, comedians, and TV presenters.</p>
       <div class="card-expanded">
-        <p>A friend and I were finishing school and had no idea what came next, so we just started asking people. First friends about their mini jobs, then increasingly well-known guests. Somehow it worked. Proof that "let's just try it" is usually reason enough to start.</p>
-        <a href="https://open.spotify.com/show/4kkYrbGrhzRXRlL2VTLBBn?si=afabd358bd2e4bfb" target="_blank" rel="noopener" class="project-link">Hören auf Spotify →</a>
+        <p>A friend and I were finishing school with no idea what came next, so we just started asking people. First friends about their mini jobs, then increasingly well-known guests. Proof that "let's just try it" is usually reason enough to start.</p>
+        <a href="https://open.spotify.com/show/4kkYrbGrhzRXRlL2VTLBBn?si=afabd358bd2e4bfb" target="_blank" rel="noopener" class="card-link">spotify ↗</a>
       </div>
     </div>
 
   </section>
 
-  <!-- ══ SPORTS ══════════════════════════════════════════════ -->
-  <section class="sports-section" id="tab-sports" style="display:none">
-    <ul class="sports-intro">
+  <!-- ══ SPORTS ═══════════════════════════════════════════════ -->
+  <section class="sports-section tab-content-section" id="tab-sports" style="display:none">
+    <ul class="sports-list">
       <li>Hiked Illimani, 6,100m</li>
       <li>Crossed the Alps twice and the Pyrenees once on foot</li>
       <li>Ran three marathons (and several halfs)</li>
@@ -167,9 +140,9 @@ title: Jan Sternberg
     </ul>
     <div class="sports-photo-block">
       <img src="/assets/images/illimani.jpeg" alt="Illimani hike with a lechuga">
-      <p class="sports-caption"><em>Our Illimani (La Paz) hike. You might ask why we brought a "lechuga" up there. We were helping a local logistics company with their supermarket operations, particularly with salads. One day in a bar after a long working day, we were discussing marketing strategies and landed on what felt like La Paz's greatest marketing stunt: bring a salad up the mountain that shapes the city. Two months later, there we were at 6,100m with the salad in our hands.</em></p>
-      <img src="/assets/images/salkentay.jpeg" alt="Salkantay Trek to Machu Picchu" style="margin-top: 28px;">
-      <p class="sports-caption"><em>Four-day Salkantay Trek to Machu Picchu.</em></p>
+      <p class="sports-caption">Our Illimani (La Paz) hike. You might ask why we brought a "lechuga" up there. We were helping a local logistics company with their supermarket operations, particularly with salads. One day in a bar after a long working day, we were discussing marketing strategies and landed on what felt like La Paz's greatest marketing stunt: bring a salad up the mountain that shapes the city. Two months later, there we were at 6,100m with the salad in our hands.</p>
+      <img src="/assets/images/salkentay.jpeg" alt="Salkantay Trek to Machu Picchu">
+      <p class="sports-caption">Four-day Salkantay Trek to Machu Picchu.</p>
     </div>
   </section>
 
@@ -179,9 +152,7 @@ title: Jan Sternberg
   function switchTab(name, btn) {
     document.querySelectorAll('.tab-content-section').forEach(function(s) { s.style.display = 'none'; });
     document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-    document.getElementById('tab-' + name).style.display = 'block';
+    document.getElementById('tab-' + name).style.display = name === 'projects' ? 'grid' : 'block';
     btn.classList.add('active');
   }
-  document.getElementById('tab-projects').classList.add('tab-content-section');
-  document.getElementById('tab-sports').classList.add('tab-content-section');
 </script>

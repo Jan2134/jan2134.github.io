@@ -1,322 +1,340 @@
-/* ─── Reset / Base ─────────────────────────────────────── */
+/* ─── Design tokens ─────────────────────────────────────── */
+
+:root {
+  --bg:            #f9f9f7;
+  --surface:       #ffffff;
+  --border:        rgba(15, 23, 42, 0.08);
+  --border-strong: rgba(15, 23, 42, 0.16);
+  --text:          #0f172a;
+  --text-2:        #475569;
+  --text-3:        #94a3b8;
+  --green:         #16a34a;
+  --mono:          ui-monospace, 'Cascadia Code', 'SF Mono', Menlo, Consolas, monospace;
+  --r:             8px;
+}
+
+/* ─── Base ──────────────────────────────────────────────── */
 
 body {
-  background: #f7f7f5;
-  color: #1a1a1a;
+  background: var(--bg);
+  color: var(--text);
 }
 
 .page-content {
   padding-top: 0;
 }
 
-/* ─── Portfolio Wrapper ─────────────────────────────────── */
+/* ─── Wrapper ───────────────────────────────────────────── */
 
-.portfolio-wrapper {
+.pw {
   max-width: 780px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 24px 80px;
 }
 
-/* ─── Intro Section ─────────────────────────────────────── */
+/* ─── Terminal bar ──────────────────────────────────────── */
 
-.portfolio-intro {
+.term-bar {
   display: flex;
-  align-items: flex-start;
-  gap: 36px;
-  padding: 64px 0 72px;
-}
-
-.intro-photo img {
-  width: 120px;
-  height: 120px;
-  max-width: 120px;
-  border-radius: 50%;
-  object-fit: cover;
-  display: block;
-  background: #e2e8f0;
-}
-
-.intro-text {
-  flex: 1;
-  min-width: 0;
-}
-
-.intro-text h1 {
-  font-size: 1.9rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0 0 4px;
-  letter-spacing: -0.03em;
-}
-
-.intro-tagline {
-  font-size: 0.95rem;
-  color: #64748b;
-  margin: 0 0 18px;
-  font-weight: 400;
-}
-
-.intro-bio {
-  font-size: 1rem;
-  line-height: 1.72;
-  color: #334155;
-  margin: 0 0 22px;
-}
-
-.social-links {
-  display: flex;
-  gap: 10px;
-  flex-wrap: wrap;
-}
-
-.social-links a {
-  display: inline-block;
-  padding: 7px 15px;
-  border: 1.5px solid #0f172a;
-  border-radius: 6px;
-  font-size: 0.82rem;
-  font-weight: 600;
-  color: #0f172a;
-  text-decoration: none;
-  letter-spacing: 0.01em;
-  transition: background 0.18s, color 0.18s;
-}
-
-.social-links a:hover {
-  background: #0f172a;
-  color: #fff;
-}
-
-/* ─── Projects Section ──────────────────────────────────── */
-
-.projects-section {
-  padding-bottom: 80px;
-}
-
-.projects-section > h2 {
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #94a3b8;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  margin: 0 0 20px;
-}
-
-/* ─── Project Card ──────────────────────────────────────── */
-
-.project-card {
-  background: #fff;
-  border: 1px solid #e2e8f0;
-  border-radius: 14px;
-  padding: 24px 28px;
-  margin-bottom: 14px;
-  overflow: hidden;
-  transition: border-color 0.22s ease, box-shadow 0.22s ease;
-}
-
-.project-card:hover {
-  border-color: #0f172a;
-  box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
-}
-
-.card-main {
-  display: flex;
-  align-items: flex-start;
-  gap: 20px;
-}
-
-.card-image {
-  flex-shrink: 0;
-  width: 64px;
-  height: 64px;
-  max-width: 64px;
-  border-radius: 50%;
-  object-fit: cover;
-  background: #f1f5f9;
-}
-
-.card-body {
-  flex: 1;
-  min-width: 0;
-}
-
-.card-meta {
-  display: flex;
+  justify-content: space-between;
   align-items: center;
-  gap: 10px;
-  margin-bottom: 6px;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-3);
+  border-bottom: 0.5px solid var(--border-strong);
+  padding: 22px 0 16px;
+  margin-bottom: 40px;
 }
 
-.year-badge {
-  font-size: 0.72rem;
+.term-online { color: var(--green); }
+
+@keyframes blink { 50% { opacity: 0; } }
+.term-cursor {
+  animation: blink 1s step-end infinite;
+  color: var(--green);
+}
+
+/* ─── Profile ───────────────────────────────────────────── */
+
+.profile {
+  display: flex;
+  gap: 24px;
+  align-items: flex-start;
+  margin-bottom: 44px;
+}
+
+.profile-avatar {
+  width: 72px;
+  height: 72px;
+  max-width: 72px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 0.5px solid var(--border-strong);
+  flex-shrink: 0;
+  background: var(--surface);
+}
+
+.profile-body h1 {
+  font-size: 1.45rem;
   font-weight: 700;
-  color: #94a3b8;
-  letter-spacing: 0.06em;
-  text-transform: uppercase;
-}
-
-.category-tag {
-  font-size: 0.7rem;
-  font-weight: 600;
-  padding: 2px 9px;
-  background: #f1f5f9;
-  border-radius: 100px;
-  color: #475569;
-  letter-spacing: 0.02em;
-}
-
-.project-title {
-  font-size: 1.1rem;
-  font-weight: 700;
-  color: #0f172a;
-  margin: 0 0 8px;
+  color: var(--text);
+  margin: 0 0 4px;
   letter-spacing: -0.02em;
 }
 
-.project-summary {
-  font-size: 0.9rem;
-  line-height: 1.65;
-  color: #475569;
-  margin: 0;
+.profile-tagline {
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-3);
+  margin: 0 0 16px;
 }
 
-/* ─── Expanded Content (revealed on hover) ──────────────── */
-
-.card-expanded {
-  max-height: 0;
-  opacity: 0;
-  overflow: hidden;
-  padding-left: 84px;
-  margin-top: 0;
-  transition:
-    max-height 0.42s cubic-bezier(0.4, 0, 0.2, 1),
-    opacity 0.28s ease 0.06s,
-    margin-top 0.32s ease;
+.profile-bio {
+  font-size: 14px;
+  line-height: 1.75;
+  color: var(--text-2);
+  margin: 0 0 20px;
+  max-width: 520px;
 }
 
-.project-card:hover .card-expanded {
-  max-height: 160px;
-  opacity: 1;
-  margin-top: 14px;
-}
-
-.card-expanded p {
-  font-size: 0.87rem;
-  line-height: 1.65;
-  color: #334155;
+.profile-bio p {
   margin: 0 0 12px;
 }
 
-.project-link {
-  display: inline-flex;
-  align-items: center;
-  gap: 4px;
-  font-size: 0.82rem;
-  font-weight: 700;
-  color: #0f172a;
+.profile-bio p:last-child {
+  margin: 0;
+}
+
+.profile-links {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.profile-link {
+  font-family: var(--mono);
+  font-size: 12px;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--r);
+  padding: 6px 12px;
+  color: var(--text);
   text-decoration: none;
-  border-bottom: 1.5px solid currentColor;
-  padding-bottom: 1px;
-  transition: opacity 0.18s;
+  transition: background 0.15s, color 0.15s, border-color 0.15s;
 }
 
-.project-link:hover {
-  opacity: 0.55;
+.profile-link:hover {
+  background: var(--text);
+  color: #fff;
+  border-color: var(--text);
 }
 
-/* ─── Responsive ────────────────────────────────────────── */
-
-@media (max-width: 640px) {
-  .portfolio-intro {
-    flex-direction: column;
-    gap: 22px;
-    padding: 44px 0 56px;
-  }
-
-  .project-card {
-    padding: 20px 18px;
-  }
-
-  .card-image {
-    width: 52px;
-    height: 52px;
-    max-width: 52px;
-  }
-
-  .card-expanded {
-    padding-left: 72px;
-  }
-
-  .project-card:hover .card-expanded {
-    max-height: 200px;
-  }
-}
-
-/* ─── Tabs ──────────────────────────────────────────────── */
+/* ─── Tab bar ───────────────────────────────────────────── */
 
 .tab-bar {
   display: flex;
-  gap: 4px;
+  gap: 24px;
+  border-bottom: 0.5px solid var(--border-strong);
+  padding-bottom: 12px;
   margin-bottom: 24px;
 }
 
 .tab-btn {
   background: none;
   border: none;
+  font-family: var(--mono);
+  font-size: 12px;
+  color: var(--text-3);
   cursor: pointer;
-  font-size: 0.72rem;
-  font-weight: 700;
-  color: #cbd5e1;
-  letter-spacing: 0.12em;
-  text-transform: uppercase;
-  padding: 0 0 6px;
-  border-bottom: 2px solid transparent;
-  transition: color 0.18s, border-color 0.18s;
-  font-family: inherit;
-  margin-right: 18px;
+  padding: 0;
+  transition: color 0.15s;
+  letter-spacing: 0.02em;
 }
 
-.tab-btn:hover {
-  color: #64748b;
+.tab-btn.active { color: var(--text); }
+.tab-btn:hover  { color: var(--text-2); }
+
+/* ─── Projects grid ─────────────────────────────────────── */
+
+.projects-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 10px;
+  padding-bottom: 60px;
 }
 
-.tab-btn.active {
-  color: #94a3b8;
-  border-bottom-color: #94a3b8;
+.project-card {
+  background: var(--surface);
+  border: 0.5px solid var(--border-strong);
+  border-radius: 12px;
+  padding: 1rem 1.15rem;
+  overflow: hidden;
+  transition: border-color 0.18s, box-shadow 0.18s;
+  cursor: default;
 }
 
-/* ─── Sports Section ────────────────────────────────────── */
+.project-card:hover {
+  border-color: var(--text);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.07);
+}
+
+.card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin-bottom: 12px;
+}
+
+.card-icon {
+  width: 34px;
+  height: 34px;
+  border: 0.5px solid var(--border-strong);
+  border-radius: var(--r);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  background: var(--bg);
+}
+
+.card-icon i {
+  font-size: 17px;
+  color: var(--text);
+}
+
+.card-num {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-3);
+}
+
+.card-name {
+  font-weight: 600;
+  font-size: 14px;
+  margin: 0 0 5px;
+  color: var(--text);
+}
+
+.card-tags {
+  font-family: var(--mono);
+  font-size: 10px;
+  color: var(--text-3);
+  margin: 0 0 8px;
+  line-height: 1.5;
+}
+
+.card-summary {
+  font-size: 12.5px;
+  color: var(--text-2);
+  line-height: 1.65;
+  margin: 0;
+}
+
+/* ─── Card expanded (hover) ─────────────────────────────── */
+
+.card-expanded {
+  max-height: 0;
+  opacity: 0;
+  overflow: hidden;
+  margin-top: 0;
+  transition:
+    max-height 0.4s cubic-bezier(0.4, 0, 0.2, 1),
+    opacity    0.25s ease 0.06s,
+    margin-top 0.3s ease;
+}
+
+.project-card:hover .card-expanded {
+  max-height: 200px;
+  opacity: 1;
+  margin-top: 12px;
+}
+
+.card-expanded p {
+  font-size: 12px;
+  line-height: 1.65;
+  color: var(--text-3);
+  margin: 0 0 10px;
+  border-top: 0.5px solid var(--border);
+  padding-top: 10px;
+}
+
+.card-link {
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text);
+  text-decoration: none;
+  border-bottom: 0.5px solid currentColor;
+  padding-bottom: 1px;
+  transition: opacity 0.15s;
+}
+
+.card-link:hover { opacity: 0.5; }
+
+/* ─── Sports section ────────────────────────────────────── */
 
 .sports-section {
-  padding-bottom: 80px;
+  padding-bottom: 60px;
 }
 
-.sports-intro {
-  font-size: 1.05rem;
-  line-height: 1.72;
-  color: #334155;
-  margin: 0 0 32px;
-  padding-left: 20px;
+.sports-list {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 36px;
 }
 
-.sports-intro li {
-  margin-bottom: 6px;
+.sports-list li {
+  font-size: 14px;
+  color: var(--text-2);
+  line-height: 1.7;
+  padding: 6px 0;
+  border-bottom: 0.5px solid var(--border);
+  display: flex;
+  align-items: baseline;
+  gap: 10px;
+}
+
+.sports-list li::before {
+  content: '//';
+  font-family: var(--mono);
+  font-size: 11px;
+  color: var(--text-3);
+  flex-shrink: 0;
 }
 
 .sports-photo-block {
-  max-width: 560px;
+  max-width: 540px;
 }
 
 .sports-photo-block img {
   width: 100%;
-  border-radius: 12px;
+  border-radius: 10px;
+  border: 0.5px solid var(--border-strong);
   display: block;
-  margin-bottom: 14px;
+  margin-bottom: 12px;
 }
 
 .sports-caption {
-  font-size: 0.85rem;
-  line-height: 1.68;
-  color: #64748b;
-  margin: 0;
+  font-family: var(--mono);
+  font-size: 11px;
+  line-height: 1.7;
+  color: var(--text-3);
+  margin: 0 0 28px;
+}
+
+/* ─── Responsive ────────────────────────────────────────── */
+
+@media (max-width: 640px) {
+  .profile {
+    flex-direction: column;
+    gap: 18px;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 860px) {
+  .projects-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
 }
