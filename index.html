@@ -159,34 +159,27 @@ title: Jan Sternberg
     document.getElementById('term-section').textContent = '// ' + name;
     if (name === 'projects') {
       document.querySelectorAll('.project-section').forEach(function(ps) {
-        sectionObserver.unobserve(ps);
-        sectionObserver.observe(ps);
+        sharedObserver.unobserve(ps);
+        sharedObserver.observe(ps);
       });
     }
   }
 
-  function makeExclusiveObserver(selector, rootMargin) {
-    var visible = new Set();
-    return new IntersectionObserver(function(entries) {
-      entries.forEach(function(e) {
-        if (e.isIntersecting) visible.add(e.target);
-        else visible.delete(e.target);
-      });
-      var all = document.querySelectorAll(selector);
-      var active = null;
-      all.forEach(function(el) { if (visible.has(el)) active = el; });
-      all.forEach(function(el) { el.classList.toggle('in-view', el === active); });
-    }, { rootMargin: rootMargin, threshold: 0 });
-  }
+  var sharedVisible = new Set();
+  var sharedObserver = new IntersectionObserver(function(entries) {
+    entries.forEach(function(e) {
+      if (e.isIntersecting) sharedVisible.add(e.target);
+      else sharedVisible.delete(e.target);
+    });
+    var all = document.querySelectorAll('.bio p, .project-section');
+    var active = null;
+    all.forEach(function(el) {
+      if (sharedVisible.has(el) && active === null) active = el; // first (topmost) wins
+    });
+    all.forEach(function(el) { el.classList.toggle('in-view', el === active); });
+  }, { rootMargin: '-8% 0px -52% 0px', threshold: 0 });
 
-  var bioObserver     = makeExclusiveObserver('.bio p',          '-8% 0px -52% 0px');
-  var sectionObserver = makeExclusiveObserver('.project-section', '-10% 0px -45% 0px');
-
-  document.querySelectorAll('.bio p').forEach(function(el) {
-    bioObserver.observe(el);
-  });
-
-  document.querySelectorAll('.project-section').forEach(function(el) {
-    sectionObserver.observe(el);
+  document.querySelectorAll('.bio p, .project-section').forEach(function(el) {
+    sharedObserver.observe(el);
   });
 </script>
