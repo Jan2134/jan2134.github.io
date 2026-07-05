@@ -165,17 +165,22 @@ title: Jan Sternberg
     }
   }
 
-  var bioObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      e.target.classList.toggle('in-view', e.isIntersecting);
-    });
-  }, { threshold: 0.6 });
+  function makeExclusiveObserver(selector, rootMargin) {
+    var visible = new Set();
+    return new IntersectionObserver(function(entries) {
+      entries.forEach(function(e) {
+        if (e.isIntersecting) visible.add(e.target);
+        else visible.delete(e.target);
+      });
+      var all = document.querySelectorAll(selector);
+      var active = null;
+      all.forEach(function(el) { if (visible.has(el)) active = el; });
+      all.forEach(function(el) { el.classList.toggle('in-view', el === active); });
+    }, { rootMargin: rootMargin, threshold: 0 });
+  }
 
-  var sectionObserver = new IntersectionObserver(function(entries) {
-    entries.forEach(function(e) {
-      e.target.classList.toggle('in-view', e.isIntersecting);
-    });
-  }, { threshold: 0.25 });
+  var bioObserver     = makeExclusiveObserver('.bio p',          '-32% 0px -32% 0px');
+  var sectionObserver = makeExclusiveObserver('.project-section', '-22% 0px -22% 0px');
 
   document.querySelectorAll('.bio p').forEach(function(el) {
     bioObserver.observe(el);
