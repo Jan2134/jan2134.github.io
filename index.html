@@ -5,8 +5,6 @@ title: Jan Sternberg
 
 <div class="layout">
 
-  <canvas id="bg-canvas"></canvas>
-
   <!-- ══ SIDEBAR ══════════════════════════════════════════════ -->
   <aside class="sidebar">
     <div class="sb-top">
@@ -49,7 +47,7 @@ title: Jan Sternberg
 
     <!-- ══ BIO ════════════════════════════════════════════════ -->
     <div class="bio" id="site-bio">
-      <p>I'm Jan. At 18, I moved to Barcelona to study Business Administration at ESADE, and quickly discovered two things I couldn't stop pursuing.</p>
+      <p>I'm Jan. At 18, I moved to Barcelona to study Business Administration at ESADE, and found two things I've been chasing ever since.</p>
       <p>The first is technology. I took every programming elective ESADE offered, attended an AI summer school at Oxford in 2023, completed a Data Analytics exchange at CBS Copenhagen, and finished with a Master's in Business Analytics at ESADE. Along the way I built up foundational skills in Python, SQL, and R, learned to navigate AWS, and spend a good portion of my free time building prototypes, apps and websites.</p>
       <p>The second is helping people grow their businesses. It started with association work at university. I've been part of over four student organisations, three of which did pro-bono consulting for companies, mostly in tech. I took on board positions leading teams of 15+, co-organised a financial literacy course with an ESADE professor, consulted businesses in the townships of South Africa, and worked with two local companies in Bolivia. Add in an exchange in Vancouver and study tours in Seoul, and I've now built working and academic experience across five continents.</p>
       <p>This page is for everything that doesn't fit on LinkedIn yet.</p>
@@ -175,90 +173,4 @@ title: Jan Sternberg
     document.getElementById('term-count').textContent = labels[name] || '';
   }
 
-  (function() {
-    var canvas = document.getElementById('bg-canvas');
-    var ctx = canvas.getContext('2d');
-    var W, H, t = 0;
-    var mouse = { x: 0, y: 0, active: false };
-
-    function resize() {
-      W = canvas.width  = window.innerWidth;
-      H = canvas.height = window.innerHeight;
-    }
-    resize();
-    window.addEventListener('resize', resize);
-    window.addEventListener('mousemove', function(e) {
-      mouse.x = e.clientX; mouse.y = e.clientY; mouse.active = true;
-    });
-
-    var palette = [
-      [148, 163, 184, 0.80],
-      [148, 163, 184, 0.50],
-      [100, 116, 139, 0.65],
-      [71,  85,  105, 0.55],
-      [22,  163, 74,  0.60],
-      [22,  163, 74,  0.35],
-      [15,  23,  42,  0.50],
-      [239, 68,  68,  0.65],
-      [220, 38,  38,  0.45],
-    ];
-
-    var RING_R = 88; /* exclusion radius around cursor */
-    var N = 140, pts = [];
-    for (var i = 0; i < N; i++) {
-      var c = palette[Math.floor(Math.random() * palette.length)];
-      pts.push({
-        x:  Math.random() * window.innerWidth,
-        y:  Math.random() * window.innerHeight,
-        vx: (Math.random() - 0.5) * 0.6,
-        vy: (Math.random() - 0.5) * 0.6,
-        r:  0.7 + Math.random() * 1.8,
-        c:  c,
-        ph: Math.random() * Math.PI * 2,
-        ws: 0.15 + Math.random() * 0.35,
-      });
-    }
-
-    function draw() {
-      t += 0.008;
-      ctx.clearRect(0, 0, W, H);
-
-      for (var i = 0; i < pts.length; i++) {
-        var p = pts[i];
-
-        /* idle wobble */
-        p.vx += Math.sin(t * p.ws + p.ph)           * 0.035;
-        p.vy += Math.cos(t * p.ws * 0.8 + p.ph + 1) * 0.035;
-
-        /* ring spring around cursor: attract from outside, repel from inside */
-        if (mouse.active) {
-          var dx = mouse.x - p.x, dy = mouse.y - p.y;
-          var d  = Math.sqrt(dx * dx + dy * dy) + 0.001;
-          var ux = dx / d, uy = dy / d;
-          var delta = d - RING_R;                        /* + outside ring, - inside */
-          var f = Math.max(-0.9, Math.min(0.55, delta * 0.0028));
-          p.vx += ux * f;
-          p.vy += uy * f;
-        }
-
-        p.vx *= 0.93; p.vy *= 0.93;
-        p.x  += p.vx; p.y  += p.vy;
-
-        /* wrap edges */
-        if (p.x < -5)    p.x = W + 5;
-        if (p.x > W + 5) p.x = -5;
-        if (p.y < -5)    p.y = H + 5;
-        if (p.y > H + 5) p.y = -5;
-
-        ctx.beginPath();
-        ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2);
-        ctx.fillStyle = 'rgba(' + p.c[0] + ',' + p.c[1] + ',' + p.c[2] + ',' + p.c[3] + ')';
-        ctx.fill();
-      }
-
-      requestAnimationFrame(draw);
-    }
-
-    draw();
-  })();
 </script>
