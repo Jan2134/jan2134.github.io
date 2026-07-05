@@ -8,7 +8,7 @@
   --text:          #0f172a;
   --text-2:        #475569;
   --text-3:        #94a3b8;
-  --green:         #16a34a;
+  --accent:        #1e40af;
   --mono:          ui-monospace, 'Cascadia Code', 'SF Mono', Menlo, Consolas, monospace;
   --r:             8px;
 }
@@ -17,12 +17,8 @@
 
 *, *::before, *::after { box-sizing: border-box; }
 
-html {
-  background: var(--bg);
-}
-
 body {
-  background: transparent;
+  background: var(--bg);
   color: var(--text);
   margin: 0;
 }
@@ -30,17 +26,6 @@ body {
 /* override minima wrappers */
 .page-content { padding: 0 !important; }
 .wrapper { max-width: none !important; padding: 0 !important; margin: 0 !important; }
-
-/* ─── Background canvas ─────────────────────────────────── */
-
-#bg-canvas {
-  position: fixed;
-  inset: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: none;
-  z-index: -1;
-}
 
 /* ─── Layout ────────────────────────────────────────────── */
 
@@ -133,7 +118,7 @@ body {
 }
 
 .nav-item:hover  { color: var(--text-2); background: rgba(15, 23, 42, 0.04); }
-.nav-item.active { color: var(--text); background: rgba(15, 23, 42, 0.06); }
+.nav-item.active { color: var(--accent); background: rgba(30, 64, 175, 0.07); }
 
 /* ─── Sidebar links ─────────────────────────────────────── */
 
@@ -152,7 +137,7 @@ body {
   transition: color 0.13s;
 }
 
-.sb-link:hover { color: var(--text); }
+.sb-link:hover { color: var(--accent); }
 
 .sb-spacer { flex: 1; }
 
@@ -168,12 +153,12 @@ body {
 }
 
 .sb-path { opacity: 0.7; }
-.term-online { color: var(--green); }
+.term-online { color: var(--accent); }
 
 @keyframes blink { 50% { opacity: 0; } }
 .term-cursor {
   animation: blink 1s step-end infinite;
-  color: var(--green);
+  color: var(--accent);
 }
 
 /* ─── Main area ─────────────────────────────────────────── */
@@ -285,7 +270,8 @@ body {
 .card-tags {
   font-family: var(--mono);
   font-size: 10px;
-  color: var(--text-3);
+  color: var(--accent);
+  opacity: 0.75;
   margin: 0 0 8px;
   line-height: 1.5;
 }
@@ -328,7 +314,7 @@ body {
 .card-link {
   font-family: var(--mono);
   font-size: 11px;
-  color: var(--text);
+  color: var(--accent);
   text-decoration: none;
   border-bottom: 0.5px solid currentColor;
   padding-bottom: 1px;
@@ -364,7 +350,8 @@ body {
   content: '//';
   font-family: var(--mono);
   font-size: 11px;
-  color: var(--text-3);
+  color: var(--accent);
+  opacity: 0.7;
   flex-shrink: 0;
 }
 
