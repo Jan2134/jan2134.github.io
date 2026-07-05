@@ -36,7 +36,7 @@ body {
   gap: 20px;
   max-width: 1200px;
   margin: 0 auto;
-  padding: 28px 24px 60px 10px;
+  padding: 28px 24px 50vh 10px;
   min-height: 100vh;
 }
 
@@ -205,14 +205,13 @@ body {
   font-size: 14px;
   font-weight: 400;
   color: #c4c0b8;
-  transition: color 0.4s ease, font-size 0.35s ease, font-weight 0.2s ease;
+  transition: color 0.4s ease, font-weight 0.2s ease;
 }
 
 .bio p:last-child { margin: 0; }
 
 .bio p.in-view {
   color: var(--text);
-  font-size: 15.5px;
   font-weight: 600;
 }
 
@@ -235,7 +234,7 @@ body {
 
 .project-section .ps-icon { opacity: 0.25; transition: opacity 0.4s ease; }
 .project-section .ps-num  { color: #d4d0c8; transition: color 0.4s ease; }
-.project-section .ps-name { color: #c4c0b8; font-size: 17px; transition: color 0.4s ease, font-size 0.35s ease; }
+.project-section .ps-name { color: #c4c0b8; font-size: 17px; transition: color 0.4s ease; }
 .project-section .ps-tags { color: #c4c0b8; opacity: 1; transition: color 0.4s ease; }
 .project-section .ps-body { color: #c4c0b8; transition: color 0.4s ease; }
 .project-section .card-link { color: #c4c0b8; border-bottom-color: #c4c0b8; transition: color 0.4s ease, border-color 0.4s ease; }
@@ -246,7 +245,7 @@ body {
 
 .project-section.in-view .ps-icon { opacity: 1; }
 .project-section.in-view .ps-num  { color: var(--text-3); }
-.project-section.in-view .ps-name { color: var(--text); font-size: 21px; }
+.project-section.in-view .ps-name { color: var(--text); }
 .project-section.in-view .ps-tags { color: var(--accent); }
 .project-section.in-view .ps-body { color: var(--text-2); }
 .project-section.in-view .card-link { color: var(--accent); border-bottom-color: var(--accent); }
