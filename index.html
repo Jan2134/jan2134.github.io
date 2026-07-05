@@ -20,7 +20,7 @@ title: Jan Sternberg
     <nav class="sb-nav">
       <button class="nav-item active" data-tab="projects" onclick="switchTab('projects', this)">// projects</button>
       <button class="nav-item" data-tab="sports" onclick="switchTab('sports', this)">// sports</button>
-      <button class="nav-item" data-tab="curriculum" onclick="switchTab('curriculum', this)">// curriculum</button>
+      <a class="nav-item" href="/curriculum/" target="_blank" rel="noopener">// curriculum ↗</a>
     </nav>
 
     <div class="sb-divider"></div>
@@ -158,13 +158,6 @@ title: Jan Sternberg
       </div>
     </section>
 
-    <!-- ══ CURRICULUM ══════════════════════════════════════════ -->
-    <section class="curriculum-section tab-content-section" id="tab-curriculum" style="display:none">
-      <div class="pdf-wrap">
-        <iframe src="/assets/curriculum.pdf" class="pdf-frame" title="Jan Sternberg — Curriculum Vitae"></iframe>
-      </div>
-    </section>
-
   </div>
 
 </div>
@@ -177,7 +170,7 @@ title: Jan Sternberg
     section.style.display = (name === 'projects') ? 'grid' : 'block';
     el.classList.add('active');
     document.getElementById('site-bio').style.display = (name === 'projects') ? '' : 'none';
-    var labels = { projects: '6 entries', sports: '4 achievements', curriculum: 'vitae' };
+    var labels = { projects: '6 entries', sports: '4 achievements' };
     document.getElementById('term-section').textContent = '// ' + name;
     document.getElementById('term-count').textContent = labels[name] || '';
   }
