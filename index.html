@@ -199,8 +199,11 @@ title: Jan Sternberg
       [22,  163, 74,  0.60],
       [22,  163, 74,  0.35],
       [15,  23,  42,  0.50],
+      [239, 68,  68,  0.65],
+      [220, 38,  38,  0.45],
     ];
 
+    var RING_R = 88; /* exclusion radius around cursor */
     var N = 140, pts = [];
     for (var i = 0; i < N; i++) {
       var c = palette[Math.floor(Math.random() * palette.length)];
@@ -224,16 +227,18 @@ title: Jan Sternberg
         var p = pts[i];
 
         /* idle wobble */
-        p.vx += Math.sin(t * p.ws + p.ph)         * 0.035;
+        p.vx += Math.sin(t * p.ws + p.ph)           * 0.035;
         p.vy += Math.cos(t * p.ws * 0.8 + p.ph + 1) * 0.035;
 
-        /* cursor gravity */
+        /* ring spring around cursor: attract from outside, repel from inside */
         if (mouse.active) {
           var dx = mouse.x - p.x, dy = mouse.y - p.y;
-          var d  = Math.sqrt(dx * dx + dy * dy) + 1;
-          var f  = Math.min(0.55, 11000 / (d * d));
-          p.vx += (dx / d) * f * 0.09;
-          p.vy += (dy / d) * f * 0.09;
+          var d  = Math.sqrt(dx * dx + dy * dy) + 0.001;
+          var ux = dx / d, uy = dy / d;
+          var delta = d - RING_R;                        /* + outside ring, - inside */
+          var f = Math.max(-0.9, Math.min(0.55, delta * 0.0028));
+          p.vx += ux * f;
+          p.vy += uy * f;
         }
 
         p.vx *= 0.93; p.vy *= 0.93;
