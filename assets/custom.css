@@ -1,8 +1,8 @@
 /* ─── Design tokens ─────────────────────────────────────── */
 
 :root {
-  --bg:            #e8e7e3;
-  --card-bg:       #f4f3f0;
+  --bg:            #f2f1ee;
+  --card-bg:       #eceae6;
   --surface:       #ffffff;
   --border:        rgba(15, 23, 42, 0.08);
   --border-strong: rgba(15, 23, 42, 0.16);
