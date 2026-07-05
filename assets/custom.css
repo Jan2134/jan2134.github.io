@@ -72,13 +72,15 @@ body {
 }
 
 .sb-avatar {
-  width: 60px;
-  height: 60px;
-  border-radius: 50%;
+  width: 100%;
+  aspect-ratio: 4 / 5;
+  border-radius: 14px;
   object-fit: cover;
+  object-position: center top;
   border: 0.5px solid var(--border-strong);
-  margin-bottom: 12px;
+  margin-bottom: 14px;
   background: var(--surface);
+  display: block;
 }
 
 .sb-name {
@@ -430,7 +432,7 @@ body {
   }
 
   .sb-top { flex-direction: row; align-items: center; gap: 10px; }
-  .sb-avatar { width: 36px; height: 36px; margin-bottom: 0; }
+  .sb-avatar { width: 36px; aspect-ratio: 1; border-radius: 8px; margin-bottom: 0; }
   .sb-tagline { display: none; }
   .sb-divider { display: none; }
   .sb-nav { flex-direction: row; gap: 4px; }
