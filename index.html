@@ -3,156 +3,229 @@ layout: default
 title: Jan Sternberg
 ---
 
-<div class="pw">
+<div class="layout">
 
-  <!-- ══ TERMINAL BAR ═════════════════════════════════════════ -->
-  <div class="term-bar">
-    <span>~/jan-sternberg</span>
-    <span>status: <span class="term-online">online</span><span class="term-cursor">_</span></span>
+  <canvas id="bg-canvas"></canvas>
+
+  <!-- ══ SIDEBAR ══════════════════════════════════════════════ -->
+  <aside class="sidebar">
+    <div class="sb-top">
+      <img class="sb-avatar" src="/assets/images/profile.JPG" alt="Jan Sternberg" onerror="this.style.display='none'">
+      <h1 class="sb-name">Jan Sternberg</h1>
+      <p class="sb-tagline">business_analytics · builder</p>
+    </div>
+
+    <div class="sb-divider"></div>
+
+    <nav class="sb-nav">
+      <button class="nav-item active" data-tab="projects" onclick="switchTab('projects', this)">// projects</button>
+      <button class="nav-item" data-tab="sports" onclick="switchTab('sports', this)">// sports</button>
+      <button class="nav-item" data-tab="curriculum" onclick="switchTab('curriculum', this)">// curriculum</button>
+    </nav>
+
+    <div class="sb-divider"></div>
+
+    <div class="sb-links">
+      <a href="https://linkedin.com/in/jan-sternberg" target="_blank" rel="noopener" class="sb-link">linkedin ↗</a>
+      <a href="https://github.com/jan2134" target="_blank" rel="noopener" class="sb-link">github ↗</a>
+      <a href="mailto:janerik.sternberg@gmail.com" class="sb-link">email ↗</a>
+    </div>
+
+    <div class="sb-spacer"></div>
+
+    <div class="sb-status">
+      <span class="sb-path">~/jan-sternberg</span>
+      <span>status: <span class="term-online">online</span><span class="term-cursor">_</span></span>
+    </div>
+  </aside>
+
+  <!-- ══ MAIN CONTENT ═════════════════════════════════════════ -->
+  <div class="main-area">
+
+    <div class="term-bar">
+      <span id="term-section">// projects</span>
+      <span id="term-count">6 entries</span>
+    </div>
+
+    <!-- ══ BIO ════════════════════════════════════════════════ -->
+    <div class="bio">
+      <p>I'm Jan. At 18, I moved to Barcelona to study Business Administration at ESADE, and quickly discovered two things I couldn't stop pursuing.</p>
+      <p>The first is technology. I took every programming elective ESADE offered, attended an AI summer school at Oxford in 2023, completed a Data Analytics exchange at CBS Copenhagen, and finished with a Master's in Business Analytics at ESADE. Along the way I built up foundational skills in Python, SQL, and R, learned to navigate AWS, and spend a good portion of my free time building prototypes, apps and websites.</p>
+      <p>The second is helping people grow their businesses. It started with association work at university. I've been part of over four student organisations, three of which did pro-bono consulting for companies, mostly in tech. I took on board positions leading teams of 15+, co-organised a financial literacy course with an ESADE professor, consulted businesses in the townships of South Africa, and worked with two local companies in Bolivia. Add in an exchange in Vancouver and study tours in Seoul, and I've now built working and academic experience across five continents.</p>
+      <p>This page is for everything that doesn't fit on LinkedIn yet.</p>
+    </div>
+
+    <!-- ══ PROJECTS ═══════════════════════════════════════════ -->
+    <section class="projects-grid tab-content-section" id="tab-projects">
+
+      <div class="project-card">
+        <div class="card-top">
+          <div class="card-icon"><img src="/assets/images/better-notes.png" alt="BetterNotes"></div>
+          <span class="card-num">01 / 06</span>
+        </div>
+        <p class="card-name">BetterNotes</p>
+        <p class="card-tags">[ai_platform] [registered_company]</p>
+        <p class="card-summary">An AI platform three of us built for students, turning raw notes and lecture slides into study materials, practice exams, and LaTeX documents. Winding down as the team moves on.</p>
+        <div class="card-expanded">
+          <p>Students paste or upload any content and instantly receive organized summaries, flashcard-ready questions, and exam simulations. LaTeX output makes it especially useful for technical coursework. The product is being sunset in 2026.</p>
+          <a href="https://better-notes.ai" target="_blank" rel="noopener" class="card-link">better-notes.ai ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-top">
+          <div class="card-icon"><img src="/assets/images/seed-podcast.png" alt="The Seed Podcast"></div>
+          <span class="card-num">02 / 06</span>
+        </div>
+        <p class="card-name">The Seed Podcast</p>
+        <p class="card-tags">[podcast] [season_2_wrapped]</p>
+        <p class="card-summary">A podcast about ventures I co-hosted for its second season, wrapping in June 2026. Conversations with founders and investors about fundraising, failure, and what it really takes to get from idea to something real.</p>
+        <div class="card-expanded">
+          <p>Season 2 ran through June 2026 with Hassan Baraka. Not the polished success story, but the real decisions, pivots, and hard-won lessons that shaped each venture.</p>
+          <a href="https://open.spotify.com/show/4M6emPxJVSQUNmapaMxLuB?si=08d94f6f5a044db9" target="_blank" rel="noopener" class="card-link">spotify ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-top">
+          <div class="card-icon"><img src="/assets/images/auraeat.png" alt="AuraEat"></div>
+          <span class="card-num">03 / 06</span>
+        </div>
+        <p class="card-name">AuraEat</p>
+        <p class="card-tags">[ios_app] [app_store_soon]</p>
+        <p class="card-summary">A circadian nutrition concept built for Esade's Ideaup Start-Up Challenge, syncing your eating window to your biological clock via Apple HealthKit. Currently prepping for App Store release.</p>
+        <div class="card-expanded">
+          <p>Reads sleep, HRV, and resting heart rate to compute your Aura Score, a daily readiness metric that determines the optimal eating window. Built with friends as a challenge project, no company behind it yet, but the plan is to get it live on the App Store.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-top">
+          <div class="card-icon"><img src="/assets/images/website-hosting.png" alt="Website Hosting"></div>
+          <span class="card-num">04 / 06</span>
+        </div>
+        <p class="card-name">Website Hosting</p>
+        <p class="card-tags">[web] [wordpress] [2019–today]</p>
+        <p class="card-summary">Over seven years hosting and building websites (mostly WordPress) for clients from Germany and Spain to a water company in South Africa, an NGO in Uganda, and a startup in Bolivia.</p>
+        <div class="card-expanded">
+          <p>Each project brought its own constraints: different infrastructure, languages, connectivity, and expectations. Building for markets where reliability really matters has made me a more thoughtful developer.</p>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-top">
+          <div class="card-icon"><img src="/assets/images/pacenosalemanes.jpg" alt="PacenosAlemanes"></div>
+          <span class="card-num">05 / 06</span>
+        </div>
+        <p class="card-name">@PacenosAlemanes</p>
+        <p class="card-tags">[youtube] [spanish] [bolivia]</p>
+        <p class="card-summary">A Spanish-language YouTube channel documenting volunteer life, consulting work, and adventure in Bolivia: what we built, what surprised us, and what it's really like to work there.</p>
+        <div class="card-expanded">
+          <p>In 2024, I traveled to Bolivia as part of a consulting project and filmed the whole experience. The channel captures the work with local businesses, the culture, and the challenges of navigating it all as an outsider.</p>
+          <a href="https://youtube.com/@PacenosAlemanes" target="_blank" rel="noopener" class="card-link">youtube ↗</a>
+        </div>
+      </div>
+
+      <div class="project-card">
+        <div class="card-top">
+          <div class="card-icon"><img src="/assets/images/zwei-jungs.PNG" alt="Zwei Jungs, ein Podcast"></div>
+          <span class="card-num">06 / 06</span>
+        </div>
+        <p class="card-name">Zwei Jungs, ein Podcast</p>
+        <p class="card-tags">[podcast] [german] [2021]</p>
+        <p class="card-summary">My first real project, a German-language podcast born out of COVID-era curiosity. What started as casual conversations about side jobs grew into interviews with parliament members, comedians, and TV presenters.</p>
+        <div class="card-expanded">
+          <p>A friend and I were finishing school with no idea what came next, so we just started asking people. First friends about their mini jobs, then increasingly well-known guests. Proof that "let's just try it" is usually reason enough to start.</p>
+          <a href="https://open.spotify.com/show/4kkYrbGrhzRXRlL2VTLBBn?si=afabd358bd2e4bfb" target="_blank" rel="noopener" class="card-link">spotify ↗</a>
+        </div>
+      </div>
+
+    </section>
+
+    <!-- ══ SPORTS ═════════════════════════════════════════════ -->
+    <section class="sports-section tab-content-section" id="tab-sports" style="display:none">
+      <ul class="sports-list">
+        <li>Hiked Illimani, 6,100m</li>
+        <li>Crossed the Alps twice and the Pyrenees once on foot</li>
+        <li>Ran three marathons (and several halfs)</li>
+        <li>Certified ski instructor</li>
+      </ul>
+      <div class="sports-photo-block">
+        <img src="/assets/images/illimani.jpeg" alt="Illimani hike">
+        <p class="sports-caption">Our Illimani (La Paz) hike. You might ask why we brought a "lechuga" up there. We were helping a local logistics company with their supermarket operations, particularly with salads. One day in a bar after a long working day, we were discussing marketing strategies and landed on what felt like La Paz's greatest marketing stunt: bring a salad up the mountain that shapes the city. Two months later, there we were at 6,100m with the salad in our hands.</p>
+        <img src="/assets/images/salkentay.jpeg" alt="Salkantay Trek to Machu Picchu">
+        <p class="sports-caption">Four-day Salkantay Trek to Machu Picchu.</p>
+      </div>
+    </section>
+
+    <!-- ══ CURRICULUM ══════════════════════════════════════════ -->
+    <section class="curriculum-section tab-content-section" id="tab-curriculum" style="display:none">
+      <div class="pdf-wrap">
+        <iframe src="/assets/curriculum.pdf" class="pdf-frame" title="Jan Sternberg — Curriculum Vitae"></iframe>
+      </div>
+    </section>
+
   </div>
-
-  <!-- ══ PROFILE ══════════════════════════════════════════════ -->
-  <div class="profile">
-    <img class="profile-avatar" src="/assets/images/profile.JPG" alt="Jan Sternberg" onerror="this.style.display='none'">
-    <div class="profile-body">
-      <h1>Jan Sternberg</h1>
-      <p class="profile-tagline">business_analytics · digital_transformation · builder</p>
-      <div class="profile-bio">
-        <p>I'm Jan. At 18, I moved to Barcelona to study Business Administration at ESADE, and quickly discovered two things I couldn't stop pursuing.</p>
-        <p>The first is technology. I took every programming elective ESADE offered, attended an AI summer school at Oxford in 2023, completed a Data Analytics exchange at CBS Copenhagen, and finished with a Master's in Business Analytics at ESADE. Along the way I built up foundational skills in Python, SQL, and R, learned to navigate AWS, and spend a good portion of my free time building prototypes, apps and websites.</p>
-        <p>The second is helping people grow their businesses. It started with association work at university. I've been part of over four student organisations, three of which did pro-bono consulting for companies, mostly in tech. I took on board positions leading teams of 15+, co-organised a financial literacy course with an ESADE professor, consulted businesses in the townships of South Africa, and worked with two local companies in Bolivia. Add in an exchange in Vancouver and study tours in Seoul, and I've now built working and academic experience across five continents.</p>
-        <p>This page is for everything that doesn't fit on LinkedIn yet.</p>
-      </div>
-      <div class="profile-links">
-        <a href="https://linkedin.com/in/jan-sternberg" target="_blank" rel="noopener" class="profile-link">linkedin ↗</a>
-        <a href="https://github.com/jan2134" target="_blank" rel="noopener" class="profile-link">github ↗</a>
-        <a href="mailto:janerik.sternberg@gmail.com" class="profile-link">email ↗</a>
-      </div>
-    </div>
-  </div>
-
-  <!-- ══ TABS ═════════════════════════════════════════════════ -->
-  <div class="tab-bar">
-    <button class="tab-btn active" onclick="switchTab('projects', this)">// projects</button>
-    <button class="tab-btn" onclick="switchTab('sports', this)">// sports</button>
-  </div>
-
-  <!-- ══ PROJECTS GRID ════════════════════════════════════════ -->
-  <section class="projects-grid tab-content-section" id="tab-projects">
-
-    <!-- BetterNotes -->
-    <div class="project-card">
-      <div class="card-top">
-        <div class="card-icon"><img src="/assets/images/better-notes.png" alt="BetterNotes"></div>
-        <span class="card-num">01 / 06</span>
-      </div>
-      <p class="card-name">BetterNotes</p>
-      <p class="card-tags">[ai_platform] [registered_company]</p>
-      <p class="card-summary">An AI platform three of us built for students, turning raw notes and lecture slides into study materials, practice exams, and LaTeX documents. Winding down as the team moves on.</p>
-      <div class="card-expanded">
-        <p>Students paste or upload any content and instantly receive organized summaries, flashcard-ready questions, and exam simulations. LaTeX output makes it especially useful for technical coursework. The product is being sunset in 2026.</p>
-        <a href="https://better-notes.ai" target="_blank" rel="noopener" class="card-link">better-notes.ai ↗</a>
-      </div>
-    </div>
-
-    <!-- The Seed Podcast -->
-    <div class="project-card">
-      <div class="card-top">
-        <div class="card-icon"><img src="/assets/images/seed-podcast.png" alt="The Seed Podcast"></div>
-        <span class="card-num">02 / 06</span>
-      </div>
-      <p class="card-name">The Seed Podcast</p>
-      <p class="card-tags">[podcast] [season_2_wrapped]</p>
-      <p class="card-summary">A podcast about ventures I co-hosted for its second season, wrapping in June 2026. Conversations with founders and investors about fundraising, failure, and what it really takes to get from idea to something real.</p>
-      <div class="card-expanded">
-        <p>Season 2 ran through June 2026 with Hassan Baraka. Not the polished success story, but the real decisions, pivots, and hard-won lessons that shaped each venture.</p>
-        <a href="https://open.spotify.com/show/4M6emPxJVSQUNmapaMxLuB?si=08d94f6f5a044db9" target="_blank" rel="noopener" class="card-link">spotify ↗</a>
-      </div>
-    </div>
-
-    <!-- AuraEat -->
-    <div class="project-card">
-      <div class="card-top">
-        <div class="card-icon"><img src="/assets/images/auraeat.png" alt="AuraEat"></div>
-        <span class="card-num">03 / 06</span>
-      </div>
-      <p class="card-name">AuraEat</p>
-      <p class="card-tags">[ios_app] [app_store_soon]</p>
-      <p class="card-summary">A circadian nutrition concept built for Esade's Ideaup Start-Up Challenge, syncing your eating window to your biological clock via Apple HealthKit. Currently prepping for App Store release.</p>
-      <div class="card-expanded">
-        <p>Reads sleep, HRV, and resting heart rate to compute your Aura Score, a daily readiness metric that determines the optimal eating window. Built with friends as a challenge project, no company behind it yet, but the plan is to get it live on the App Store.</p>
-      </div>
-    </div>
-
-    <!-- Website Hosting -->
-    <div class="project-card">
-      <div class="card-top">
-        <div class="card-icon"><img src="/assets/images/website-hosting.png" alt="Website Hosting"></div>
-        <span class="card-num">04 / 06</span>
-      </div>
-      <p class="card-name">Website Hosting</p>
-      <p class="card-tags">[web] [wordpress] [2019–today]</p>
-      <p class="card-summary">Over seven years hosting and building websites (mostly WordPress) for clients from Germany and Spain to a water company in South Africa, an NGO in Uganda, and a startup in Bolivia.</p>
-      <div class="card-expanded">
-        <p>Each project brought its own constraints: different infrastructure, languages, connectivity, and expectations. Building for markets where reliability really matters has made me a more thoughtful developer.</p>
-      </div>
-    </div>
-
-    <!-- @PacenosAlemanes -->
-    <div class="project-card">
-      <div class="card-top">
-        <div class="card-icon"><img src="/assets/images/pacenosalemanes.jpg" alt="PacenosAlemanes"></div>
-        <span class="card-num">05 / 06</span>
-      </div>
-      <p class="card-name">@PacenosAlemanes</p>
-      <p class="card-tags">[youtube] [spanish] [bolivia]</p>
-      <p class="card-summary">A Spanish-language YouTube channel documenting volunteer life, consulting work, and adventure in Bolivia: what we built, what surprised us, and what it's really like to work there.</p>
-      <div class="card-expanded">
-        <p>In 2024, I traveled to Bolivia as part of a consulting project and filmed the whole experience. The channel captures the work with local businesses, the culture, and the challenges of navigating it all as an outsider.</p>
-        <a href="https://youtube.com/@PacenosAlemanes" target="_blank" rel="noopener" class="card-link">youtube ↗</a>
-      </div>
-    </div>
-
-    <!-- Zwei Jungs, ein Podcast -->
-    <div class="project-card">
-      <div class="card-top">
-        <div class="card-icon"><img src="/assets/images/zwei-jungs.PNG" alt="Zwei Jungs, ein Podcast"></div>
-        <span class="card-num">06 / 06</span>
-      </div>
-      <p class="card-name">Zwei Jungs, ein Podcast</p>
-      <p class="card-tags">[podcast] [german] [2021]</p>
-      <p class="card-summary">My first real project, a German-language podcast born out of COVID-era curiosity. What started as casual conversations about side jobs grew into interviews with parliament members, comedians, and TV presenters.</p>
-      <div class="card-expanded">
-        <p>A friend and I were finishing school with no idea what came next, so we just started asking people. First friends about their mini jobs, then increasingly well-known guests. Proof that "let's just try it" is usually reason enough to start.</p>
-        <a href="https://open.spotify.com/show/4kkYrbGrhzRXRlL2VTLBBn?si=afabd358bd2e4bfb" target="_blank" rel="noopener" class="card-link">spotify ↗</a>
-      </div>
-    </div>
-
-  </section>
-
-  <!-- ══ SPORTS ═══════════════════════════════════════════════ -->
-  <section class="sports-section tab-content-section" id="tab-sports" style="display:none">
-    <ul class="sports-list">
-      <li>Hiked Illimani, 6,100m</li>
-      <li>Crossed the Alps twice and the Pyrenees once on foot</li>
-      <li>Ran three marathons (and several halfs)</li>
-      <li>Certified ski instructor</li>
-    </ul>
-    <div class="sports-photo-block">
-      <img src="/assets/images/illimani.jpeg" alt="Illimani hike with a lechuga">
-      <p class="sports-caption">Our Illimani (La Paz) hike. You might ask why we brought a "lechuga" up there. We were helping a local logistics company with their supermarket operations, particularly with salads. One day in a bar after a long working day, we were discussing marketing strategies and landed on what felt like La Paz's greatest marketing stunt: bring a salad up the mountain that shapes the city. Two months later, there we were at 6,100m with the salad in our hands.</p>
-      <img src="/assets/images/salkentay.jpeg" alt="Salkantay Trek to Machu Picchu">
-      <p class="sports-caption">Four-day Salkantay Trek to Machu Picchu.</p>
-    </div>
-  </section>
 
 </div>
 
 <script>
-  function switchTab(name, btn) {
+  function switchTab(name, el) {
     document.querySelectorAll('.tab-content-section').forEach(function(s) { s.style.display = 'none'; });
-    document.querySelectorAll('.tab-btn').forEach(function(b) { b.classList.remove('active'); });
-    document.getElementById('tab-' + name).style.display = name === 'projects' ? 'grid' : 'block';
-    btn.classList.add('active');
+    document.querySelectorAll('.nav-item[data-tab]').forEach(function(b) { b.classList.remove('active'); });
+    var section = document.getElementById('tab-' + name);
+    section.style.display = (name === 'projects') ? 'grid' : 'block';
+    el.classList.add('active');
+    var labels = { projects: '6 entries', sports: '4 achievements', curriculum: 'vitae' };
+    document.getElementById('term-section').textContent = '// ' + name;
+    document.getElementById('term-count').textContent = labels[name] || '';
   }
+
+  (function() {
+    var canvas = document.getElementById('bg-canvas');
+    var ctx = canvas.getContext('2d');
+    var mouse = { x: 0.4, y: 0.4 };
+
+    var orbs = [
+      { x: 0.25, y: 0.30, tx: 0.25, ty: 0.30, r: 0.55, col: '22,163,74',   speed: 0.012 },
+      { x: 0.72, y: 0.60, tx: 0.72, ty: 0.60, r: 0.48, col: '71,85,105',   speed: 0.008 },
+      { x: 0.50, y: 0.85, tx: 0.50, ty: 0.85, r: 0.40, col: '15,23,42',    speed: 0.006 },
+      { x: 0.80, y: 0.20, tx: 0.80, ty: 0.20, r: 0.36, col: '100,116,139', speed: 0.010 }
+    ];
+
+    window.addEventListener('mousemove', function(e) {
+      mouse.x = e.clientX / window.innerWidth;
+      mouse.y = e.clientY / window.innerHeight;
+      orbs[0].tx = mouse.x * 0.5 + 0.05;
+      orbs[0].ty = mouse.y * 0.5 + 0.05;
+      orbs[1].tx = 0.3 + (1 - mouse.x) * 0.5;
+      orbs[1].ty = 0.2 + mouse.y * 0.6;
+      orbs[2].tx = mouse.x * 0.4 + 0.3;
+      orbs[2].ty = 0.5 + (1 - mouse.y) * 0.4;
+    });
+
+    function draw() {
+      canvas.width  = window.innerWidth;
+      canvas.height = window.innerHeight;
+      ctx.clearRect(0, 0, canvas.width, canvas.height);
+      var W = canvas.width, H = canvas.height;
+      for (var i = 0; i < orbs.length; i++) {
+        var o = orbs[i];
+        o.x += (o.tx - o.x) * o.speed;
+        o.y += (o.ty - o.y) * o.speed;
+        var cx = o.x * W, cy = o.y * H, cr = o.r * Math.min(W, H);
+        var g = ctx.createRadialGradient(cx, cy, 0, cx, cy, cr);
+        g.addColorStop(0,   'rgba(' + o.col + ',0.06)');
+        g.addColorStop(0.5, 'rgba(' + o.col + ',0.025)');
+        g.addColorStop(1,   'rgba(' + o.col + ',0)');
+        ctx.beginPath();
+        ctx.arc(cx, cy, cr, 0, Math.PI * 2);
+        ctx.fillStyle = g;
+        ctx.fill();
+      }
+      requestAnimationFrame(draw);
+    }
+
+    draw();
+  })();
 </script>
