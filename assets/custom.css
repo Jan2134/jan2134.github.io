@@ -1,7 +1,7 @@
 /* ─── Design tokens ─────────────────────────────────────── */
 
 :root {
-  --bg:            #f2f1ee;
+  --bg:            #f8f7f5;
   --card-bg:       #eceae6;
   --surface:       #ffffff;
   --border:        rgba(15, 23, 42, 0.08);
@@ -195,21 +195,26 @@ body {
 /* ─── Bio ───────────────────────────────────────────────── */
 
 .bio {
-  font-size: 14px;
   line-height: 1.75;
-  color: var(--text-2);
   margin-bottom: 36px;
   max-width: 600px;
 }
 
 .bio p {
-  margin: 0 0 12px;
-  opacity: 0.28;
-  transition: opacity 0.55s ease;
+  margin: 0 0 14px;
+  font-size: 14px;
+  font-weight: 400;
+  color: #c4c0b8;
+  transition: color 0.4s ease, font-size 0.35s ease, font-weight 0.2s ease;
 }
 
 .bio p:last-child { margin: 0; }
-.bio p.in-view { opacity: 1; }
+
+.bio p.in-view {
+  color: var(--text);
+  font-size: 15.5px;
+  font-weight: 600;
+}
 
 /* ─── Projects list (scroll sections) ───────────────────── */
 
@@ -221,20 +226,30 @@ body {
   padding: 28px 0 28px 22px;
   border-left: 2px solid transparent;
   border-bottom: 0.5px solid var(--border);
-  opacity: 0.28;
-  transform: translateY(6px);
-  transition: opacity 0.5s ease, transform 0.5s ease, border-color 0.4s ease;
+  transition: border-color 0.4s ease;
 }
 
 .project-section:last-child {
   border-bottom: none;
 }
 
+.project-section .ps-icon { opacity: 0.25; transition: opacity 0.4s ease; }
+.project-section .ps-num  { color: #d4d0c8; transition: color 0.4s ease; }
+.project-section .ps-name { color: #c4c0b8; font-size: 17px; transition: color 0.4s ease, font-size 0.35s ease; }
+.project-section .ps-tags { color: #c4c0b8; opacity: 1; transition: color 0.4s ease; }
+.project-section .ps-body { color: #c4c0b8; transition: color 0.4s ease; }
+.project-section .card-link { color: #c4c0b8; border-bottom-color: #c4c0b8; transition: color 0.4s ease, border-color 0.4s ease; }
+
 .project-section.in-view {
-  opacity: 1;
-  transform: translateY(0);
   border-left-color: var(--accent);
 }
+
+.project-section.in-view .ps-icon { opacity: 1; }
+.project-section.in-view .ps-num  { color: var(--text-3); }
+.project-section.in-view .ps-name { color: var(--text); font-size: 21px; }
+.project-section.in-view .ps-tags { color: var(--accent); }
+.project-section.in-view .ps-body { color: var(--text-2); }
+.project-section.in-view .card-link { color: var(--accent); border-bottom-color: var(--accent); }
 
 .ps-top {
   display: flex;
@@ -267,9 +282,7 @@ body {
 }
 
 .ps-name {
-  font-size: 17px;
   font-weight: 700;
-  color: var(--text);
   margin: 0 0 6px;
   letter-spacing: -0.02em;
   font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
@@ -278,34 +291,25 @@ body {
 .ps-tags {
   font-family: var(--mono);
   font-size: 10px;
-  color: var(--accent);
-  opacity: 0.75;
   margin: 0 0 14px;
 }
 
 .ps-body {
   font-size: 13.5px;
   line-height: 1.75;
-  color: var(--text-2);
   margin: 0 0 9px;
   max-width: 560px;
-}
-
-.ps-body + .ps-body {
-  color: var(--text-3);
-  font-size: 13px;
 }
 
 .card-link {
   font-family: var(--mono);
   font-size: 11px;
-  color: var(--accent);
   text-decoration: none;
   border-bottom: 0.5px solid currentColor;
   padding-bottom: 1px;
-  transition: opacity 0.15s;
   display: inline-block;
   margin-top: 6px;
+  transition: color 0.4s ease, border-color 0.4s ease, opacity 0.15s;
 }
 
 .card-link:hover { opacity: 0.5; }
