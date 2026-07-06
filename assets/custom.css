@@ -139,7 +139,8 @@ body {
   transition: color 0.13s;
 }
 
-.sb-link:hover { color: var(--accent); }
+.sb-link:visited { color: var(--text-3); }
+.sb-link:hover   { color: var(--accent); }
 
 .sb-spacer { flex: 1; }
 
