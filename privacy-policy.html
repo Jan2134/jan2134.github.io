@@ -131,7 +131,7 @@ permalink: /auraeat/privacy-policy/
     <div class="wordmark">AuraEat</div>
 
     <h1>Privacy Policy</h1>
-    <p class="updated">Last updated: July 9, 2026</p>
+    <p class="updated">Last updated: September 27, 2026</p>
 
     <p>
       AuraEat is a circadian nutrition app that helps you align your eating
@@ -173,6 +173,16 @@ permalink: /auraeat/privacy-policy/
       locally and is never transmitted to our servers.
     </div>
 
+    <p><strong>Eating-window times (only if you turn on the Lock Screen countdown)</strong></p>
+    <p>
+      The Lock Screen countdown is optional and off by default. If you turn it
+      on, we store the start and end time of your daily eating window, the
+      eating protocol you chose, your time zone and the date, together with the
+      push tokens Apple gives your device for the countdown. We do not store
+      your sleep, heart-rate or HRV readings, or your Aura Score. See
+      <a href="#countdown">Lock Screen countdown</a> below.
+    </p>
+
     <hr class="divider" />
 
     <h2>What we do not collect</h2>
@@ -190,13 +200,51 @@ permalink: /auraeat/privacy-policy/
     <h2>How your data is stored</h2>
     <p>
       Data that lives only on your device — HealthKit signals, app settings,
-      streaks — is stored using iOS encrypted secure storage and never leaves
-      your phone.
+      streaks — is kept in AuraEat's private app storage, protected by the
+      standard iOS device encryption, and never leaves your phone.
     </p>
     <p>
-      Meal logs and drink logs are synced to our cloud database hosted by
-      Supabase in the EU. Access is enforced at the database level so only your
-      account can read or write your own records.
+      Meal logs and drink logs — and, if you turn on the Lock Screen countdown,
+      your eating-window times and push tokens — are synced to our cloud
+      database hosted by Supabase in the EU. Access is enforced at the database
+      level so only your account can read or write your own records.
+    </p>
+
+    <hr class="divider" />
+
+    <h2 id="countdown">Lock Screen countdown (optional)</h2>
+    <p>
+      <strong>What it does.</strong> In the last 30 minutes of your eating
+      window, AuraEat can show a countdown on your Lock Screen and in the
+      Dynamic Island. To start it while the app is closed, our server needs to
+      know when your window ends.
+    </p>
+    <p>
+      <strong>What we process.</strong> Your daily eating-window start and end
+      time, eating protocol, time zone and date, and the Apple push tokens for
+      the countdown. Because the eating window is calculated from health data,
+      we treat these times as health data.
+    </p>
+    <p>
+      <strong>Legal basis.</strong> Your explicit consent (GDPR Art. 9(2)(a)),
+      given with the separate "Lock Screen countdown" switch. It is off by
+      default and AuraEat works fully without it.
+    </p>
+    <p>
+      <strong>Who receives it.</strong> Supabase (database, EU) stores it.
+      Apple Push Notification service delivers the countdown to your device and
+      receives the push token and the times shown in the countdown.
+    </p>
+    <p>
+      <strong>Visibility.</strong> The countdown is visible on your Lock Screen
+      without unlocking your phone. You can turn Live Activities off for
+      AuraEat at any time in iOS Settings.
+    </p>
+    <p>
+      <strong>How long we keep it.</strong> Eating-window times are deleted
+      automatically after 30 days. When you turn the switch off, or delete
+      your account, your stored eating-window times and push tokens are deleted
+      immediately.
     </p>
 
     <hr class="divider" />
@@ -219,7 +267,12 @@ permalink: /auraeat/privacy-policy/
         <tr>
           <td>Supabase</td>
           <td>Cloud database (EU-hosted)</td>
-          <td>Meal logs, drink logs</td>
+          <td>Meal logs, drink logs; eating-window times and push tokens (only with the Lock Screen countdown)</td>
+        </tr>
+        <tr>
+          <td>Apple Push Notification service</td>
+          <td>Delivering the Lock Screen countdown</td>
+          <td>Push token, eating-window start and end time (only with the Lock Screen countdown)</td>
         </tr>
         <tr>
           <td>Apple HealthKit</td>
@@ -234,9 +287,16 @@ permalink: /auraeat/privacy-policy/
     <h2>Your rights</h2>
     <p>
       You can delete your account and all associated data at any time from
-      <strong>Profile → Settings → Delete Account</strong>. Upon deletion, all
+      <strong>Profile → Delete account</strong>. Upon deletion, all
       records linked to your account are permanently removed from our servers
       within 30 days.
+    </p>
+    <p>
+      You can withdraw any consent at any time in
+      <strong>Profile → Privacy &amp; consent</strong>. Withdrawal takes effect
+      immediately and does not affect processing that happened before it.
+      Withdrawing the core consent stops AuraEat from working until you agree
+      again.
     </p>
     <p>
       If you are in the European Union, you have the right to access, correct,
